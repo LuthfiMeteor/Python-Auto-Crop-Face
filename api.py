@@ -65,7 +65,7 @@ def process_image():
     coordinates = detect_face(file_path)
     cropped_image_path = crop_image(file_path, coordinates)
 
-    cropped_url = f"http://127.0.0.1:5000/cropped_images/{os.path.basename(cropped_image_path)}"
+    cropped_url = f"{request.host_url}cropped_images/{os.path.basename(cropped_image_path)}"
 
     if coordinates:
         return jsonify({
